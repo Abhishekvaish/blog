@@ -4,6 +4,8 @@ title: How To Deploy A Django App On Heroku
 tags: "python, django, heroku deploy"
 ---
 
+Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+
 
 ![_config.yml]({{ site.baseurl }}/images/django-heroku.jpg)
 
