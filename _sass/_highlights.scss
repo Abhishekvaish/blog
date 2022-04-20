@@ -1,5 +1,11 @@
+pre {
+  font-size: 15px;
+  line-height: 1.42857143;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
-.highlight {
+pre.highlight {
   background-color: #efefef;
   padding: 7px 7px 7px 10px;
   border: 1px solid #ddd;
@@ -7,7 +13,16 @@
   -webkit-box-shadow: 3px 3px rgba(0,0,0,0.1);
   box-shadow: 3px 3px rgba(0,0,0,0.1);
   margin: 20px 0 20px 0;
-  overflow: scroll;
+  overflow-x:scroll;
+}
+// Specify the color of the selection
+pre ::-moz-selection {
+  color: $white;
+  background: $blue;
+}
+pre ::selection {
+  color: $white;
+  background: $blue;
 }
 
 code {
