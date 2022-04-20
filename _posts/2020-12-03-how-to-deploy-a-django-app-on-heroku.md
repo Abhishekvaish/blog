@@ -15,6 +15,7 @@ tags: "python, django, heroku deploy"
 
 ##### Step 2. Go to the command line and install psycopg2, gunicorn, django-heroku and create requirements.txt
 
+
 ```sh
 	pip install psycopg2
 	# And NOW… you’ll be able to install django-heroku 
@@ -24,14 +25,14 @@ tags: "python, django, heroku deploy"
 ```
 
 ##### Step 3. In your app/settings.py
-```py
+{% highlight python %}.
 	import django_heroku 
 
 	# Then all the way at the bottom of the file
 	# ... 
 
 	django_heroku.settings(locals()) 
-```
+{% endhighlight %}.
 
 
 ##### Step 4. push it to heroku
