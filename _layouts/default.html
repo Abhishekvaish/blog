@@ -35,6 +35,7 @@
     </div>
 
     <div id="main" role="main" class="container">
+	  <input type="text" name="search-queey" placeholder="search a blog..." autocomplete="off" >
       {{ content }}
     </div>
 
@@ -47,5 +48,48 @@
     </div>
 
     {% include analytics.html %}
+
+	<script>
+		if( document.readyState !== 'loading' ) {
+			// console.log( 'document is already ready, just execute code here' );
+			myInitCode();
+		} else {
+			// console.log( 'document was not ready, place code here' );
+			document.addEventListener('DOMContentLoaded',myInitCode);
+		}
+
+		function myInitCode(e) {
+			const input = document.querySelector("input")
+			if (!window.location.href.endsWith("/blog/")){
+				input.style.display = "none"
+				return
+			}
+			const postsContainer = document.querySelector(".posts")
+			const data = [...postsContainer.children]
+			input.oninput = (e) => {
+				const searchString = e.target.value.toLowerCase().trim();
+				const filteredData  = data.filter((article) => {
+					const h1 = article.querySelector("h1 a")
+					const p = article.querySelector(".entry *")
+					h1.innerHTML = h1.innerHTML.replace(/<\/?mark>/g, '')
+					p.innerHTML = p.innerHTML.replace(/<\/?mark>/g, '')
+
+					if (searchString.length == 0)
+						return true
+
+					if ( h1.innerText.toLowerCase().includes(searchString) ||
+					p.innerText.toLowerCase().includes(searchString)){
+
+						const regex = new RegExp(searchString, 'gi');
+						h1.innerHTML = h1.innerHTML.replace(regex, '<mark>$&</mark>');
+						p.innerHTML = p.innerHTML.replace(regex, '<mark>$&</mark>');
+						return true
+					}
+					return false
+				})
+				postsContainer.replaceChildren(...filteredData)
+			}
+		}
+	</script>
   </body>
 </html>
