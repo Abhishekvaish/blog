@@ -15,3 +15,22 @@ layout: default
 
   {% include disqus.html %}
 </article>
+
+<script>
+	document.querySelectorAll(".highlighter-rouge").forEach(pre => {
+		// console.log(pre.textContent)
+		pre.onclick = () => {
+			navigator.clipboard.writeText(pre.textContent)
+			.then(() => {
+		    console.log('Text copied to clipboard');
+		  })
+		  .catch(err => {
+		    // This can happen if the user denies clipboard permissions:
+		    console.error('Could not copy text: ', err);
+		  });
+		}
+	  
+	})
+	
+
+</script>

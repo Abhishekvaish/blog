@@ -27,14 +27,14 @@ Heroku is a platform as a service (PaaS) that enables developers to build, run, 
 ```
 
 ##### Step 3. In your app/settings.py
-{% highlight python %}.
+```py
 	import django_heroku 
 
 	# Then all the way at the bottom of the file
 	# ... 
 
 	django_heroku.settings(locals()) 
-{% endhighlight %}.
+```
 
 
 ##### Step 4. push it to heroku

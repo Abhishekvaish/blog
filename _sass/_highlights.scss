@@ -1,19 +1,32 @@
 pre {
-  font-size: 15px;
+  font-size: 1rem;
   line-height: 1.42857143;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 5px;
+  position : relative;
 }
-
+.highlighter-rouge{
+  position : relative;
+}
+.highlighter-rouge::after {
+  content :'\2750';
+  color : white;
+  position : absolute ;
+  top : 5px;
+  right :5px;
+  cursor:pointer;
+  font-size : 1.5rem;
+}
 pre.highlight {
-  background-color: #efefef;
+  background-color:#272822;
   padding: 7px 7px 7px 10px;
+  padding: 1.5rem  1rem  1rem 1rem;
   border: 1px solid #ddd;
   -moz-box-shadow: 3px 3px rgba(0,0,0,0.1);
   -webkit-box-shadow: 3px 3px rgba(0,0,0,0.1);
   box-shadow: 3px 3px rgba(0,0,0,0.1);
   margin: 20px 0 20px 0;
-  overflow-x:scroll;
+  overflow-x:auto;
 }
 // Specify the color of the selection
 pre ::-moz-selection {
@@ -27,6 +40,8 @@ pre ::selection {
 
 code {
   font-family:'Bitstream Vera Sans Mono','Courier', monospace;
+  font-family:Consolas,Monaco,"Andale Mono","Ubuntu Mono",monospace;
+  color: #f8f8f2;
 }
 
 .highlight .c { color: #586E75 } /* Comment */
@@ -34,7 +49,7 @@ code {
 .highlight .g { color: #93A1A1 } /* Generic */
 .highlight .k { color: #859900 } /* Keyword */
 .highlight .l { color: #93A1A1 } /* Literal */
-.highlight .n { color: #93A1A1 } /* Name */
+.highlight .n { color: #f8f8f2 } /* Name */
 .highlight .o { color: #859900 } /* Operator */
 .highlight .x { color: #CB4B16 } /* Other */
 .highlight .p { color: #93A1A1 } /* Punctuation */
@@ -71,7 +86,7 @@ code {
 .highlight .nf { color: #268BD2 } /* Name.Function */
 .highlight .nl { color: #93A1A1 } /* Name.Label */
 .highlight .nn { color: #93A1A1 } /* Name.Namespace */
-.highlight .nx { color: #555 } /* Name.Other */
+.highlight .nx { color: #f8f8f2 } /* Name.Other */
 .highlight .py { color: #93A1A1 } /* Name.Property */
 .highlight .nt { color: #268BD2 } /* Name.Tag */
 .highlight .nv { color: #268BD2 } /* Name.Variable */
@@ -90,7 +105,7 @@ code {
 .highlight .si { color: #2AA198 } /* Literal.String.Interpol */
 .highlight .sx { color: #2AA198 } /* Literal.String.Other */
 .highlight .sr { color: #DC322F } /* Literal.String.Regex */
-.highlight .s1 { color: #2AA198 } /* Literal.String.Single */
+.highlight .s1 { color: #a6e22e } /* Literal.String.Single */
 .highlight .ss { color: #2AA198 } /* Literal.String.Symbol */
 .highlight .bp { color: #268BD2 } /* Name.Builtin.Pseudo */
 .highlight .vc { color: #268BD2 } /* Name.Variable.Class */
