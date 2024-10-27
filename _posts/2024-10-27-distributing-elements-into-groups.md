@@ -30,7 +30,7 @@ So we have 8 possible combinations of above 3 conditions.
 - [Number of ways to distribute _n_ **distinct** elements into _m_ **distinct** groups.](#7-number-of-ways-to-distribute-n-distinct-elements-into-m-distinct-groups)
 - [Number of ways to distribute _n_ **distinct** elements into _m_ **distinct** non-empty groups.](#8-number-of-ways-to-distribute-n-distinct-elements-into-m-distinct-non-empty-groups)
 
-## 1. Number of ways to distribute n identical elements into m distinct non-empty groups.
+## [1.](#1-number-of-ways-to-distribute-n-identical-elements-into-m-distinct-non-empty-groups) Number of ways to distribute n identical elements into m distinct non-empty groups.
 
 - Number of ways to distribute 2 balls into a bag and a bucket such that no bag is empty.
 <center> { { 1 in bucket,1 in bag } } </center>
@@ -51,7 +51,7 @@ So we have 8 possible combinations of above 3 conditions.
 
 - Total ways = <sup>(n-1)</sup> C <sub>(m-1)</sub>
 
-## 2. Number of ways to distribute n identical elements into m distinct groups.
+## [2.](#2-number-of-ways-to-distribute-n-identical-elements-into-m-distinct-groups) Number of ways to distribute n identical elements into m distinct groups.
 
 - Number of ways to distribute 2 balls into a bag and a bucket
   <center> { { 0 in bucket, 2 in bag }, { 1 in bucket, 1 in bag }, { 2 in bucket, 0 in bag } } </center>
@@ -68,7 +68,7 @@ So we have 8 possible combinations of above 3 conditions.
 
 - Total ways = <sup>(n+m-1)</sup> C <sub>(m-1)<sub>
 
-## 3. Number of ways to distribute n distinct elements into m identical non-empty groups.
+## [3.](#3-number-of-ways-to-distribute-n-distinct-elements-into-m-identical-non-empty-groups) Number of ways to distribute n distinct elements into m identical non-empty groups.
 
 - Number of ways to distribute a red ball and a blue ball into 2 bags such that no bag is empty
   <center> { {both in different bags } } </center>
@@ -93,7 +93,7 @@ So we have 8 possible combinations of above 3 conditions.
 
 - Total ways = S(n,m) = m \* S(n-1,m) + S(n-1,m-1)
 
-## 4. Number of ways to distribute n distinct elements into m identical groups.
+## [4.](#4-number-of-ways-to-distribute-n-distinct-elements-into-m-identical-groups) Number of ways to distribute n distinct elements into m identical groups.
 
 - Number of ways to distribute a red ball and a blue ball into 2 bags.
   <center> { { both in same bag }, { both in different bags } } </center>
@@ -107,7 +107,7 @@ So we have 8 possible combinations of above 3 conditions.
 
   This is closely related to the [Bell Number (Bn)](https://en.wikipedia.org/wiki/Bell_number) which counts the different ways to partitions a set of n elements into any number of groups. Bn = S(n,1) + S(n,2) + S(n,3) + .... S(n,n)
 
-## 5. Number of ways to distribute n identical elements into m identical non-empty groups.
+## [5.](#5-number-of-ways-to-distribute-n-identical-elements-into-m-identical-non-empty-groups) Number of ways to distribute n identical elements into m identical non-empty groups.
 
 - Number of ways to distribute 2 balls into 2 bags such that no bags are empty.
   <center> { {1,1} } </center>
@@ -132,7 +132,7 @@ So we have 8 possible combinations of above 3 conditions.
 
 - Total ways = P(n,m) = P(n-1,m-1) + P(n-m,m)
 
-## 6. Number of ways to distribute n identical elements into m identical groups.
+## [6.](#6-number-of-ways-to-distribute-n-identical-elements-into-m-identical-groups) Number of ways to distribute n identical elements into m identical groups.
 
 - Number of ways to distribute 2 balls into 2 bags <center> { {1,1}, {0,2} } </center>
   Here, {2,0} is samse to {0,2} because groups are identical
@@ -144,7 +144,7 @@ So we have 8 possible combinations of above 3 conditions.
 
 - Total ways = P(n,1) + P(n,2) + ..... + P(n,m)
 
-## 7. Number of ways to distribute n distinct elements into m distinct groups.
+## [7.](#7-number-of-ways-to-distribute-n-distinct-elements-into-m-distinct-groups) Number of ways to distribute n distinct elements into m distinct groups.
 
 - Number of ways to distribute a red ball and a blue ball into a bucket and a bag.
 
@@ -153,7 +153,7 @@ So we have 8 possible combinations of above 3 conditions.
 - For each element we have m groups to choose from.
 - Total Number of ways = m _ m _ m \* m .... (n times) = **m<sup>n</sup>**
 
-## 8. Number of ways to distribute n distinct elements into m distinct non-empty groups.
+## [8.](#8-number-of-ways-to-distribute-n-distinct-elements-into-m-distinct-non-empty-groups) Number of ways to distribute n distinct elements into m distinct non-empty groups.
 
 - Number of ways to distribute a red ball and a blue ball into a bucket and a bag such that neither is empty.
   <center> { { red ball in bucket, blue ball in bag }, {blue ball in bucket, red ball in bag } } </center>
