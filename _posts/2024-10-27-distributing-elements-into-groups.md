@@ -10,7 +10,7 @@ Grouping of elements into groups depends on 3 conditions
 2. whether the groups are distinct or identical.
 3. whether groups can be empty or not.
 
-So we have 8 possible combinations of above 3 conditions are.
+So we have 8 possible combinations of above 3 conditions.
 
 - [Number of ways to distribute _n_ **identical** elements into _m_ **distinct** non-empty groups.](#1-number-of-ways-to-distribute-n-identical-elements-into-m-distinct-non-empty-groups)
 - [Number of ways to distribute _n_ **identical** elements into _m_ **distinct** groups.](#2-number-of-ways-to-distribute-n-identical-elements-into-m-distinct-groups)
@@ -78,20 +78,20 @@ So we have 8 possible combinations of above 3 conditions are.
 
 - This is given by [Stirling numbers of second kind](https://en.wikipedia.org/wiki/Stirling_numbers_of_the_second_kind) S(n,m) which counts the number of ways to partition a set of n elements into m non-empty subsets.
 
-- _S(n,m) = m \* S(n-1,m) + S(n-1,m-1)_
+- S(n,m) = m \* S(n-1,m) + S(n-1,m-1)
 
-  - _m \* S(n-1,m)_ <br/>
+  - m \* S(n-1,m) <br/>
     This term refers to the case where the n-th element is added to one
     of the existing m sets that have already been formed from the n−1 elements.
-  - _S(n-1,m-1)_ <br/>
+  - S(n-1,m-1) <br/>
     This term refers to the case where the n-th element is placed in
     its own new set, which means it becomes the only element in that set.
   - Base Cases
-    - _S(0,0) = 1_: There's exactly one way to partition zero elements into zero sets (the empty partition).
-    - _S(n,0) = 0_ for n>0: You cannot partition a non-zero number of elements into zero non-empty sets.
-    - _S(n,1) = 1_: There's exactly one way to partition n elements into 1 set (all elements in one set).
+    - S(0,0) = 1: There's exactly one way to partition zero elements into zero sets (the empty partition).
+    - S(n,0) = 0 for n>0: You cannot partition a non-zero number of elements into zero non-empty sets.
+    - S(n,1) = 1: There's exactly one way to partition n elements into 1 set (all elements in one set).
 
-- Total ways = _S(n,m) = m \* S(n-1,m) + S(n-1,m-1)_
+- Total ways = S(n,m) = m \* S(n-1,m) + S(n-1,m-1)
 
 ## 4. Number of ways to distribute n distinct elements into m identical groups.
 
@@ -100,13 +100,12 @@ So we have 8 possible combinations of above 3 conditions are.
 
 - If some groups are empty, we can count the number of ways
   to distribute elements into remaining non-empty groups using the above result
-  i.e. _S(n, m - number_of_empty_groups) ways_.
-  This can occur with no groups empty, 1 group empty , 2 groups empty, .... so on till m-1 groups.
+  i.e. **S(n, m - number of empty groups)** ways.
+  This can occur with no groups empty, 1 group empty, 2 groups empty, .... so on till m-1 groups.
 
 - Total ways = S(n,1) + S(n,2) + ..... + S(n,m)
 
-  This is closely related to the [Bell Number (Bn)](https://en.wikipedia.org/wiki/Bell_number) which counts the different ways to partitions a set<br/>
-  of n elements into any number of groups. _Bn = S(n,1) + S(n,2) + S(n,3) + .... S(n,n)_
+  This is closely related to the [Bell Number (Bn)](https://en.wikipedia.org/wiki/Bell_number) which counts the different ways to partitions a set of n elements into any number of groups. Bn = S(n,1) + S(n,2) + S(n,3) + .... S(n,n)
 
 ## 5. Number of ways to distribute n identical elements into m identical non-empty groups.
 
@@ -123,15 +122,15 @@ So we have 8 possible combinations of above 3 conditions are.
 - A very nice visual explanation for the recursive relation is on [Youtube](https://youtu.be/F4zYDx-EfZI?si=UzKYkLhOPR47BERZ)
 
 - The recursive relation is defined as:
-  _P(n,m) = P(n-1,m-1) + P(n-m,m)_
+  P(n,m) = P(n-1,m-1) + P(n-m,m)
 
   - If a group has 1 element , when we remove that group
-    we get all possible ways to distriubte n-1 elements into m-1 groups given by _P(n-1,m-1)_
+    we get all possible ways to distriubte n-1 elements into m-1 groups given by P(n-1,m-1)
   - If no group has 1 element i.e all groups have atleast 2 elements
     In this case removing 1 element from each group will give us all possible ways
-    to distribute n-m elements into m groups given by _P(n-m,m)_
+    to distribute n-m elements into m groups given by P(n-m,m)
 
-- Total ways = _P(n,m) = P(n-1,m-1) + P(n-m,m)_
+- Total ways = P(n,m) = P(n-1,m-1) + P(n-m,m)
 
 ## 6. Number of ways to distribute n identical elements into m identical groups.
 
@@ -140,7 +139,7 @@ So we have 8 possible combinations of above 3 conditions are.
 
 - Similar to [case #4](#4-number-of-ways-to-distribute-n-distinct-elements-into-m-identical-groups) If some groups are empty then we can count the number of ways
   to distribute elements into remaining non-empty groups using the above result
-  i.e. **P(n, m - number_of_empty_groups) ways**.
+  i.e. **P(n, m - number_of_empty_groups)** ways.
   we can have no groups empty, 1 group empty , 2 groups empty, .... so on till m-1 groups.
 
 - Total ways = P(n,1) + P(n,2) + ..... + P(n,m)
@@ -159,7 +158,7 @@ So we have 8 possible combinations of above 3 conditions are.
 - Number of ways to distribute a red ball and a blue ball into a bucket and a bag such that neither is empty.
   <center> { { red ball in bucket, blue ball in bag }, {blue ball in bucket, red ball in bag } } </center>
 
-- Method 1: Using [Inclusion-Exclusion Principle](https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle)
+- **Method 1**: Using [Inclusion-Exclusion Principle](https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle)
 
   - we know that we can have m<sup>n</sup> ways if we allow empty groups <br/>
     from this we need to subtract number of ways in which some groups are empty.
@@ -172,9 +171,9 @@ So we have 8 possible combinations of above 3 conditions are.
   - Total ways = m<sup>n</sup> - **[** <sup>m</sup>C<sub>1</sub> \* (m-1)<sup>n</sup> - <sup>m</sup>C<sub>2</sub> \* (m-2)<sup>n</sup> + <sup>m</sup>C<sub>3</sub> \* (m-3)<sup>n</sup> - .... + (-1) <sup>m</sup> \* <sup>m</sup>C<sub>m-1</sub> \* (1)<sup>n</sup> **]** <br/>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = m<sup>n</sup> - <sup>m</sup>C<sub>1</sub> \* (m-1)<sup>n</sup> + <sup>m</sup>C<sub>2</sub> \* (m-2)<sup>n</sup> - <sup>m</sup>C<sub>3</sub> \* (m-3)<sup>n</sup> + .... + (-1) <sup>m</sup> \* <sup>m</sup>C<sub>m-1</sub> \* (1)<sup>n</sup>
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = $∑_{i=0}^m$ (-1)<sup>i</sup> \* <sup>m</sup>C<sub>i</sub> \* (m-i)<sup>n</sup>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = (i=0 to m)∑ (-1)<sup>i</sup> \* <sup>m</sup>C<sub>i</sub> \* (m-i)<sup>n</sup>
 
-- Method 2: Using Stirlings Numbers of Second kind
+- **Method 2**: Using Stirlings Numbers of Second kind
 
   - we know that Stirlings Number of Second kind is the number of ways to distribute
     n distinct items into m identical non-empty groups. we can multiply this number by m!
@@ -182,4 +181,4 @@ So we have 8 possible combinations of above 3 conditions are.
 
   - Total ways = m! \* S(n,m)
 
-- Total ways = $∑_{i=0}^m$ (-1)<sup>i</sup> \* <sup>m</sup>C<sub>i</sub> \* (m-i)<sup>n</sup> = m! \* S(n,m)
+- Total ways = (i=0 to m) ∑ (-1)<sup>i</sup> \* <sup>m</sup>C<sub>i</sub> \* (m-i)<sup>n</sup> = m! \* S(n,m)
